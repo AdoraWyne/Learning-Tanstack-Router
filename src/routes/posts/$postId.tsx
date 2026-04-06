@@ -12,6 +12,7 @@ export const Route = createFileRoute("/posts/$postId")({
       postId: params.postId,
     };
   },
+  pendingComponent: () => <div>Loading...</div>,
 });
 
 function RouteComponent() {
