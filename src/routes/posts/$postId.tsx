@@ -4,6 +4,7 @@ export const Route = createFileRoute("/posts/$postId")({
   component: RouteComponent,
   // loader is to get the data that the component needs before component uses and renders it
   loader: async ({ params }) => {
+    throw new Error();
     // fetching the data that this component needs here
     await new Promise((resolve) => setTimeout(resolve, 5000));
 
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/posts/$postId")({
     };
   },
   pendingComponent: () => <div>Loading...</div>,
+  errorComponent: () => <div>adora please save the fire!!! 🔥</div>,
 });
 
 function RouteComponent() {
